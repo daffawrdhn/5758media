@@ -66,7 +66,8 @@
                                       {{ __('Dashboard') }}
                                   </a>
 
-                                  <a class="dropdown-item" href="{{ route('home') }}">Home</a>
+                                  <a class="dropdown-item" href="{{ route('index') }}">Home</a>
+                                  <a class="dropdown-item" href="{{ route('home') }}">Profile</a>
 
                                   <a class="dropdown-item" href="{{ route('logout') }}"
                                       onclick="event.preventDefault();

@@ -10,12 +10,53 @@
 |
 */
 use App\Order;
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    $totalorders = Order::count();
+    $totalmediapartners = Order::where('paket','=','2')->count();
+    $averageunits = Order::avg('jumlah_unit');
+
+
+    $start = new Carbon('2019-09-01 00:00:00');
+    $now = Carbon::now();
+    $days = $start->diffInDays($now);
+
+    return view('index')
+    ->with('totalorders', $totalorders)
+    ->with('totalmediapartners', $totalmediapartners)
+    ->with('averageunits', $averageunits)
+    ->with('days', $days);
+})->name('index');
+
+Route::get('/sonya', function (Request $request) {
+    $tanggal = $request->input('tanggal');
+    $hari = $request->input('hari');
+    $unit = $request->input('unit');
+    $route = Route::current();
+    $cek = Order::whereBetween('tanggal_sewa', [Carbon::parse($tanggal), Carbon::parse($tanggal)->addDays($hari)])->get();
+    return view('sonya')
+    ->with('cek', $cek);
+})->name('sonya');
+
+Route::post('/snya', 'Controller@tanggal');
+
 Route::get('/a', function () {
-    return view('a');
+    $totalorders = Order::count();
+    $totalmediapartners = Order::where('paket','=','2')->count();
+    $averageunits = Order::avg('jumlah_unit');
+
+    $start = new Carbon('2012-09-01 00:00:00');
+    $now = Carbon::now();
+    $days = $start->diffInDays($now);
+
+    return view('a')
+    ->with('totalorders', $totalorders)
+    ->with('totalmediapartners', $totalmediapartners)
+    ->with('averageunits', $averageunits)
+    ->with('days', $days);
 });
+
 Route::get('/nota/{kode}', function($kode){
     // $nota = Order::where('kode', $kode)->first();
     // $pdf = PDF::loadview('nota',['nota'=>$nota]);

@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
   <div class="row">
-      <div class="col-3">
+      <div class="col-sm-3">
         <div class="card">
           <div class="card-header">
             Profile
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-sm-9">
 
         <div class="alert alert-primary alert-dismissible fade show" role="alert">
           <h1 class="display-4">Hello, {{ Auth::user()->name }}!</h1>
@@ -90,7 +90,7 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body"> <br>
                 <div class="row justify-content-center">
-                  <div class="col-4">
+                  <div class="col-sm-4">
                     <div class="card shadow border">
                       <img src="https://wrdhndty.site/img/header.jpeg" class="card-img-top" alt="...">
                       <div class="card-body">
@@ -114,24 +114,24 @@
                                   <form method="POST" action="/home/new_order">
                                             {{ csrf_field() }}
                                     <div class="form-row">
-                                      <div class="form-group col-md-6">
+                                      <div class="form-group col-sm-md-6">
                                         <label >Nama penyewa</label>
                                         <input type="text" name="nama" class="form-control" placeholder="{{ Auth::user()->name }}">
                                         <small class="form-text text-muted">Nama penyewa haru sama dengan Jaminan.</small>
                                       </div>
-                                      <div class="form-group col-md-6">
+                                      <div class="form-group col-sm-md-6">
                                         <label for="no_hp">Nomor telfon</label>
                                         <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="{{ Auth::user()->phone }}">
                                         <small class="form-text text-muted">Masukkan nomor yang dapat dihubungi.</small>
                                       </div>
                                     </div>
                                     <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-sm-md-6">
                                       <label for="acara">Acara</label>
                                       <input type="text" name="acara" class="form-control" id="acara" placeholder="Nama acara / kegiatan">
                                       <small class="form-text text-muted">Nama acara.</small>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-sm-md-6">
                                       <label for="paket">Paket</label>
                                       <select id="paket" name="paket" class="form-control" readonly>
                                         <option value="1"selected>Normal</option>
@@ -144,11 +144,11 @@
                                       <small class="form-text text-muted">Lokasi / alamat acara.</small>
                                     </div>
                                     <div class="form-row">
-                                      <div class="form-group col-md-6">
+                                      <div class="form-group col-sm-md-6">
                                         <label for="tanggal_sewa">Tanggal sewa</label>
                                         <input type="date" name="tanggal_sewa" class="form-control" id="tanggal_sewa">
                                       </div>
-                                      <div class="form-group col-md-4">
+                                      <div class="form-group col-sm-md-4">
                                         <label for="jumlah_hari">Jumlah hari</label>
                                         <select id="jumlah_hari" name="jumlah_hari" class="form-control">
                                           <option selected>Pilih..</option>
@@ -157,7 +157,7 @@
                                               @endfor
                                         </select>
                                       </div>
-                                      <div class="form-group col-md-2">
+                                      <div class="form-group col-sm-md-2">
                                         <label for="jumlah_unit">Unit</label>
                                         <select id="jumlah_unit" name="jumlah_unit" class="form-control">
                                           <option selected>Pilih..</option>
@@ -202,7 +202,7 @@
 
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-sm-4">
                     <div class="card shadow border">
                       <img src="https://wrdhndty.site/img/header.jpeg" class="card-img-top" alt="...">
                       <div class="card-body">
@@ -226,24 +226,24 @@
                                   <form method="POST" action="/home/new_order">
                                             {{ csrf_field() }}
                                     <div class="form-row">
-                                      <div class="form-group col-md-6">
+                                      <div class="form-group col-sm-md-6">
                                         <label >Nama penyewa</label>
                                         <input type="text" name="nama" class="form-control" placeholder="{{ Auth::user()->name }}">
                                         <small class="form-text text-muted">Nama penyewa haru sama dengan Jaminan.</small>
                                       </div>
-                                      <div class="form-group col-md-6">
+                                      <div class="form-group col-sm-md-6">
                                         <label for="no_hp">Nomor telfon</label>
                                         <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="{{ Auth::user()->phone }}">
                                         <small class="form-text text-muted">Masukkan nomor yang dapat dihubungi.</small>
                                       </div>
                                     </div>
                                     <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-sm-md-6">
                                       <label for="acara">Acara</label>
                                       <input type="text" name="acara" class="form-control" id="acara" placeholder="Nama acara / kegiatan">
                                       <small class="form-text text-muted">Nama acara.</small>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-sm-md-6">
                                       <label for="paket">Paket</label>
                                       <select id="paket" name="paket" class="form-control" readonly>
                                         <option value="2"selected>Media Partner</option>
@@ -256,11 +256,11 @@
                                       <small class="form-text text-muted">Lokasi / alamat acara.</small>
                                     </div>
                                     <div class="form-row">
-                                      <div class="form-group col-md-6">
+                                      <div class="form-group col-sm-md-6">
                                         <label for="tanggal_sewa">Tanggal sewa</label>
                                         <input type="date" name="tanggal_sewa" class="form-control" id="tanggal_sewa">
                                       </div>
-                                      <div class="form-group col-md-4">
+                                      <div class="form-group col-sm-md-4">
                                         <label for="jumlah_hari">Jumlah hari</label>
                                         <select id="jumlah_hari" name="jumlah_hari" class="form-control">
                                           <option selected>Pilih..</option>
@@ -269,7 +269,7 @@
                                               @endfor
                                         </select>
                                       </div>
-                                      <div class="form-group col-md-2">
+                                      <div class="form-group col-sm-md-2">
                                         <label for="jumlah_unit">Unit</label>
                                         <select id="jumlah_unit" name="jumlah_unit" class="form-control">
                                           <option selected>Pilih..</option>
@@ -377,12 +377,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -406,7 +406,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -415,11 +415,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -430,7 +430,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -444,10 +444,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -465,12 +465,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -494,7 +494,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -503,11 +503,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -518,7 +518,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -532,10 +532,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -577,12 +577,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -606,7 +606,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -615,11 +615,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -630,7 +630,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -644,10 +644,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -700,12 +700,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -729,7 +729,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -738,11 +738,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -753,7 +753,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -768,10 +768,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -795,12 +795,12 @@
                               {{ method_field('PUT') }}
 
                               <div class="form-row">
-                              <div class="form-group col-md-6">
+                              <div class="form-group col-sm-md-6">
                                 <b>Upload jaminan</b><br/>
                                 <input type="file" name="upload_jaminan">
                               </div>
 
-                              <div class="form-group col-md-6">
+                              <div class="form-group col-sm-md-6">
                                 <label for="jenis_jaminan">Jaminan</label>
                                 <select class="form-control" name="jenis_jaminan" id="jenis_jaminan">
                                   <option value="KTP">KTP</option>
@@ -810,7 +810,7 @@
                               </div>
                               </div>
 
-                              <div class="form-group col-md-12">
+                              <div class="form-group col-sm-md-12">
                                 <b>Pelunasan</b><br/>
                                 <input type="text" name="pelunasan" placeholder="{{ $o -> pelunasan }}" readonly>
                               </div>
@@ -853,12 +853,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -882,7 +882,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -891,11 +891,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -906,7 +906,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -922,10 +922,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -1003,12 +1003,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -1032,7 +1032,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -1041,11 +1041,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -1056,7 +1056,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -1071,10 +1071,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -1126,12 +1126,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -1155,7 +1155,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -1164,11 +1164,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -1179,7 +1179,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                                 Menu
@@ -1194,10 +1194,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
@@ -1215,12 +1215,12 @@
                       </div>
                       <div class="card-body pt-2 pb-2 border-bottom">
                         <div class="row">
-                          <div class="col-5 border-right">
+                          <div class="col-sm-5 border-right">
                             Peminjam
                             <h1 data-toggle="tooltip" data-placement="top" title="Phone : {{ $o -> no_hp }}">{{ $o -> nama }}</h1>
                             {{ $o -> acara }}, {{ $o -> alamat }}
                           </div>
-                          <div class="col-4 border-right">
+                          <div class="col-sm-4 border-right">
                             Status
                             @if($o->status =='0')
                                     <h3>Menunggu di proses</h3>
@@ -1244,7 +1244,7 @@
                                     <h3>ERROR</h3>
                             @endif
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Total biaya sewa
                             <h3>Rp {{ $o -> total_pembayaran }}</h3>
                             {{ $o -> jumlah_unit }} Unit, {{ $o -> jumlah_hari }} hari.
@@ -1253,11 +1253,11 @@
                       </div>
                       <div class="card-body pt-2 pb-2">
                         <div class="row">
-                          <div class="col-6 border-right">
+                          <div class="col-sm-6 border-right">
                             ({{$o -> id}}) Code
                             <h1 class="text-monospace">{{ $o -> kode }}</h1>
                           </div>
-                          <div class="col-3">
+                          <div class="col-sm-3">
                             Paket
                             @if( $o -> paket =='1')
                                     <h3>Normal</h3>
@@ -1268,7 +1268,7 @@
                             @endif
                             Rp {{$o -> harga_unit}} / Unit / 24Jam
                           </div>
-                          <div class="col-3 text-center align-self-center">
+                          <div class="col-sm-3 text-center align-self-center">
                             <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                                 Menu
@@ -1283,10 +1283,10 @@
                       </div>
                       <div class="card-footer bg-white">
                         <div class="row">
-                          <div class="col-auto text-center border-right">
+                          <div class="col-sm-auto text-center border-right">
                             <a href="/home/order/nota/{{$o->id}}" target="_blank" class="badge badge-primary">Lihat detail order</a>
                           </div>
-                          <div class="col-auto">
+                          <div class="col-sm-auto">
                             Tanggal kembali : {{Carbon\Carbon::parse($o->tanggal_kembali)->toFormattedDateString()}}
                           </div>
                         </div>
