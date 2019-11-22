@@ -16,7 +16,7 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "nesbot/carbon": "^2.24",
-        "yajra/laravel-datatables-oracle": "^9.6"
+        "yajra/laravel-datatables-oracle": "^9.7"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

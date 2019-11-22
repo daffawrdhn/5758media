@@ -34,9 +34,13 @@ Route::get('/sonya', function (Request $request) {
     $hari = $request->input('hari');
     $unit = $request->input('unit');
     $route = Route::current();
-    $cek = Order::whereBetween('tanggal_sewa', [Carbon::parse($tanggal), Carbon::parse($tanggal)->addDays($hari)])->get();
+    $cek = Order::whereBetween('tanggal_sewa', [Carbon::parse($tanggal), Carbon::parse($tanggal)->addDays($hari)])->orderBy('tanggal_sewa', 'ASC')->get();
+    // dd($cek);
     return view('sonya')
-    ->with('cek', $cek);
+    ->with('cek', $cek)
+    ->with('unit', $unit)
+    ->with('hari', $hari)
+    ->with('tanggal', $tanggal);
 })->name('sonya');
 
 Route::post('/snya', 'Controller@tanggal');
