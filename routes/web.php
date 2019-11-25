@@ -12,6 +12,7 @@
 use App\Order;
 use Illuminate\Http\Request;
 
+
 Route::get('/', function () {
     $totalorders = Order::count();
     $totalmediapartners = Order::where('paket','=','2')->count();
@@ -43,24 +44,6 @@ Route::get('/sonya', function (Request $request) {
     ->with('tanggal', $tanggal);
 })->name('sonya');
 
-Route::post('/snya', 'Controller@tanggal');
-
-Route::get('/a', function () {
-    $totalorders = Order::count();
-    $totalmediapartners = Order::where('paket','=','2')->count();
-    $averageunits = Order::avg('jumlah_unit');
-
-    $start = new Carbon('2012-09-01 00:00:00');
-    $now = Carbon::now();
-    $days = $start->diffInDays($now);
-
-    return view('a')
-    ->with('totalorders', $totalorders)
-    ->with('totalmediapartners', $totalmediapartners)
-    ->with('averageunits', $averageunits)
-    ->with('days', $days);
-});
-
 Route::get('/nota/{kode}', function($kode){
     // $nota = Order::where('kode', $kode)->first();
     // $pdf = PDF::loadview('nota',['nota'=>$nota]);
@@ -72,40 +55,39 @@ Route::get('/nota/{kode}', function($kode){
 // Route::get('/nota/{kode}', 'HomeController@cek');
 Auth::routes();
 // Route::any('/home', 'HomeController@index')->name('home');
-Route::any('/home', 'HomeController@index_baru')->name('home');
-Route::post('/home/new_order', 'HomeController@store');
-Route::put('/home/order/batalkan/{id}', 'HomeController@batal');
-Route::put('/home/order/pembayaran/{id}', 'HomeController@pembayaran');
-Route::put('/home/order/pelunasan/{id}', 'HomeController@pelunasan');
-Route::put('/home/order/selesai/{id}', 'HomeController@selesai');
-Route::get('/home/order/nota/{id}', 'HomeController@nota');
-Route::get('/home/order/archive/', 'HomeController@archive');
+Route::any('/home', 'HomeController@index')->name('home');
+Route::post('/home/new_order', 'HomeController@store')->name('store');
+Route::put('/home/order/batalkan/{id}', 'HomeController@batal')->name('userbatal');
+Route::put('/home/order/pembayaran/{id}', 'HomeController@pembayaran')->name('userpembayaran');
+Route::put('/home/order/pelunasan/{id}', 'HomeController@pelunasan')->name('userpelunasan');
+Route::put('/home/order/selesai/{id}', 'HomeController@selesai')->name('userselesai');
+Route::get('/home/order/nota/{id}', 'HomeController@nota')->name('notauser');
+Route::get('/home/order/archive/', 'HomeController@archive')->name('archive');
 Route::group(['middleware' => ['auth','admin']], function() {
     // Route::get('/dashboard', function() {
     //     return view('dashboard');
     // });
     // Route::any('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
-    Route::any('/dashboard', 'Admin\DashboardController@index_baru')->name('dashboard');
+    Route::any('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
     //useredit
-    Route::get('/dashboard/user/edit/{id}/', 'Admin\DashboardController@useredit');
-    Route::put('/dashboard/user/edit/update/{id}', 'Admin\DashboardController@editupdate');
+    Route::put('/dashboard/user/edit/update/{id}', 'Admin\DashboardController@editupdate')->name('editupdate');
     //userdelete
-    Route::get('/dashboard/user/delete/{id}/', 'Admin\DashboardController@userdelete');
+    Route::get('/dashboard/user/delete/{id}/', 'Admin\DashboardController@userdelete')->name('userdelete');
     //-> old
-    Route::get('/dashboard/order/delete/{id}/', 'Admin\DashboardController@orderdelete'); //DANGER!
+    Route::get('/dashboard/order/delete/{id}/', 'Admin\DashboardController@orderdelete')->name('orderdelete'); //DANGER!
     //verifyorder-old
-    Route::put('/dashboard/order/proses/{id}', 'Admin\DashboardController@proses');
+    Route::put('/dashboard/order/proses/{id}', 'Admin\DashboardController@proses')->name('proses');
     //verifyorder-new
-    Route::put('/dashboard/order/proses/new/{id}', 'Admin\DashboardController@konfirmasiorder');
-    Route::put('/dashboard/order/proses/dp/{id}', 'Admin\DashboardController@konfirmasidp');
-    Route::put('/dashboard/order/proses/jaminan/{id}', 'Admin\DashboardController@konfirmasijaminan');
-    Route::put('/dashboard/order/proses/batal/{id}', 'Admin\DashboardController@batal');
-    Route::put('/dashboard/order/proses/pembatalan/{id}', 'Admin\DashboardController@konfirmasipembatalan');
-    Route::put('/dashboard/order/proses/delete/{id}', 'Admin\DashboardController@hapusorder');
-    Route::put('/dashboard/order/proses/selesai/{id}', 'Admin\DashboardController@orderselesai');
-    Route::get('/dashboard/order/nota/{id}', 'Admin\DashboardController@nota');
+    Route::put('/dashboard/order/proses/new/{id}', 'Admin\DashboardController@konfirmasiorder')->name('konfirmasiorder');
+    Route::put('/dashboard/order/proses/dp/{id}', 'Admin\DashboardController@konfirmasidp')->name('konfirmasidp');
+    Route::put('/dashboard/order/proses/jaminan/{id}', 'Admin\DashboardController@konfirmasijaminan')->name('konfirmasijaminan');
+    Route::put('/dashboard/order/proses/batal/{id}', 'Admin\DashboardController@batal')->name('batal');
+    Route::put('/dashboard/order/proses/pembatalan/{id}', 'Admin\DashboardController@konfirmasipembatalan')->name('konfirmasipembatalan');
+    Route::put('/dashboard/order/proses/delete/{id}', 'Admin\DashboardController@hapusorder')->name('hapusorder');
+    Route::put('/dashboard/order/proses/selesai/{id}', 'Admin\DashboardController@orderselesai')->name('orderselesai');
+    Route::get('/dashboard/order/nota/{id}', 'Admin\DashboardController@nota')->name('nota');
 
-    Route::get('/dashboard/order/rollback/dp/{id}', 'Admin\DashboardController@rollbackdp');
-    Route::get('/dashboard/order/rollback/pelunasan/{id}', 'Admin\DashboardController@rollbackpelunasan');
+    Route::get('/dashboard/order/rollback/dp/{id}', 'Admin\DashboardController@rollbackdp')->name('rollbackdp');
+    Route::get('/dashboard/order/rollback/pelunasan/{id}', 'Admin\DashboardController@rollbackpelunasan')->name('rollbackpelunasan');
     //ajax
 });

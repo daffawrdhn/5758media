@@ -5,7 +5,7 @@
   <div class="row d-flex flex-column">
     <div class="col-sm-12 mb-3 mt-3 d-flex justify-content-center">
       <div class="container">
-        <form action="/sonya" method="GET">
+        <form action="{{route('sonya')}}" method="GET">
           <div class="row border">
 
             <div class="col-sm mb-3 mt-3 d-flex">

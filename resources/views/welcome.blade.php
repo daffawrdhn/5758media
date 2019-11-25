@@ -383,12 +383,12 @@
           <div class="form-row">
             <div class="form-group col-sm-md-6">
               <label >Nama penyewa</label>
-              <input type="text" name="nama" class="form-control" placeholder="{{ Auth::user()->name }}">
+              <input type="text" name="nama" class="form-control" placeholder="Nama">
               <small class="form-text text-muted">Nama penyewa haru sama dengan Jaminan.</small>
             </div>
             <div class="form-group col-sm-md-6">
               <label for="no_hp">Nomor telfon</label>
-              <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="{{ Auth::user()->phone }}">
+              <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="No hp">
               <small class="form-text text-muted">Masukkan nomor yang dapat dihubungi.</small>
             </div>
           </div>
@@ -472,12 +472,12 @@
           <div class="form-row">
             <div class="form-group col-sm-md-6">
               <label >Nama penyewa</label>
-              <input type="text" name="nama" class="form-control" placeholder="{{ Auth::user()->name }}">
+              <input type="text" name="nama" class="form-control" placeholder="Nama">
               <small class="form-text text-muted">Nama penyewa haru sama dengan Jaminan.</small>
             </div>
             <div class="form-group col-sm-md-6">
               <label for="no_hp">Nomor telfon</label>
-              <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="{{ Auth::user()->phone }}">
+              <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="Nomor hp">
               <small class="form-text text-muted">Masukkan nomor yang dapat dihubungi.</small>
             </div>
           </div>

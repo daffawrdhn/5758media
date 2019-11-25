@@ -27,13 +27,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
-    {
-      $users = User::all();
-      $orders = Order::where('nama', '=', Auth::user()->name)->get();
-      return view('home')->with('users', $users)->with('orders', $orders);
-    }
-    public function index_baru()
     {
       $orders = Order::where('idu', '=', Auth::user()->id)->get();
       $orderbaru = Order::where('idu', '=', Auth::user()->id)->where('status', '=', '0')->get();
@@ -51,7 +46,7 @@ class HomeController extends Controller
       $selesai_count = Order::where('idu', '=', Auth::user()->id)->where('status', '=', '6')->count();
       $pembatalan_count = Order::where('idu', '=', Auth::user()->id)->where('status', '=', '98')->count();
       $dibatalkan_count = Order::where('idu', '=', Auth::user()->id)->where('status', '=', '99')->count();
-      return view('home_baru')
+      return view('home')
               ->with('orders', $orders)
               ->with('orderbaru', $orderbaru)
               ->with('dp', $dp)

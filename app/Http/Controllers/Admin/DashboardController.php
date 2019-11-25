@@ -11,13 +11,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 class DashboardController extends Controller
 {
+
     public function index()
-    {
-        $users = User::all();
-        $orders = Order::all();
-        return view('dashboard')->with('users', $users)->with('orders', $orders);
-    }
-    public function index_baru()
     {
         //where order
         $semuaorder_data = Order::orderBy('tanggal_sewa', 'ASC')->paginate(10);
@@ -41,7 +36,7 @@ class DashboardController extends Controller
         $pesanandibatalkan_count = Order::where('status', '=', '99')->count();
         $selesai_count = Order::where('status', '=', '6')->count();
         //count user
-        return view('dashboard_baru')
+        return view('dashboard')
                     //where
                     ->with('semuaorder_data', $semuaorder_data)
                     ->with('konfirmasiorder_data', $konfirmasiorder_data)
@@ -71,11 +66,6 @@ class DashboardController extends Controller
         return $pdf->stream($kode.'.pdf');
     }
     //edit user
-    public function useredit(Request $request, $id)
-    {
-        $users = User::findOrFail($id);
-        return view('dashboard_edit')->with('users', $users);
-    }
     public function editupdate(Request $request, $id)
     {
       $this->validate($request, [

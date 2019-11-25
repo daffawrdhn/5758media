@@ -28,7 +28,7 @@
           <div class="content">
             <div class="card shadow-sm" style="min-width: 352px;">
               <div class="card-body">
-                <form action="/sonya" method="GET">
+                <form action="{{route('sonya')}}" method="GET">
                   <div class="row">
                     <div class="col-sm-12 d-flex flex-column align-items-center">
                       <div class="input-group mb-3">
