@@ -38,9 +38,23 @@
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 400px) {
     #panel1 {
-      padding-top: 20px;
+      margin-top: 30px;
+    }
+    #fact {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    #panel2 {
+      margin-top: 30px;
+    }
+    #fakta {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    #header{
+      text-align: center;
     }
   }
 
@@ -242,87 +256,290 @@
 
 <div id="kaki" class="container-fluid vh-auto mt-5 text-white bg-dark">
   <div class="row">
-    <div class="col-sm-4 pt-5 pb-5">
-        <div class="container">
+    <div class="col-sm-4  pt-5 pb-5">
+        <h1 class="display-2 font-5758 linear-wipe text-center">5758</h1>
+        <p class="text-center"> &copy; Copyright 2019 Majumapan Media.</p>
 
-          <h1 class="display-2 font-5758 linear-wipe">5758</h1>
-          <p> &copy; Copyright 2019 Majumapan Media.</p>
-
-          <div class="d-flex flex-row">
-            <a class="btn btn-outline-light mr-3" href="https://www.instagram.com/5758media" role="button"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light" href="https://www.google.com/maps/dir//-8.1772155,113.7207026/@-8.1771989,113.7207106,20z" role="button"><i class="fas fa-map-marked-alt"></i></a>
-          </div>
-
+        <div class="d-flex flex-row justify-content-center">
+          <a class="btn btn-outline-light mr-3" href="https://www.instagram.com/5758media" role="button"><i class="fab fa-instagram"></i>  Instagram</a>
+          <a class="btn btn-outline-light" href="https://www.google.com/maps/dir//-8.1772155,113.7207026/@-8.1771989,113.7207106,20z" role="button"><i class="fas fa-map-marked-alt"></i>  Maps</a>
         </div>
     </div>
     <div class="col-sm-4 pt-5 pb-5">
       <div class="container">
-        <p class="font-weight-bold">Navigasi</p>
-        <ul class="list-unstyled text-white font-5758">
-          @if (Route::currentRouteName() == 'index')
-            @if (Route::has('login'))
-            <!-- <div class="top-right links"> -->
-            @auth
-            <li><a class="text-white" href="#panel1">Home</a></li>
-            <li><a class="text-white" href="#panel2">Harga</a></li>
-            <li><a class="text-white" href="{{ url('/home') }}">Profile</a></li>
-            @if (Auth::check() && Auth::user()->isAdmin())
+        <div class="border-bottom">
+          <p class="font-weight-bold">Navigasi</p>
+        </div>
+        <div class="pt-2">
+          <ul class="list-unstyled text-white font-5758">
+            @if (Route::currentRouteName() == 'index')
+              @if (Route::has('login'))
+              <!-- <div class="top-right links"> -->
+              @auth
+              <li><a class="text-white" href="#panel1">Home</a></li>
+              <li><a class="text-white" href="#panel2">Harga</a></li>
+              <li><a class="text-white" href="{{ url('/home') }}">Profile</a></li>
+              @if (Auth::check() && Auth::user()->isAdmin())
 
-            <li><a class="text-white" href="{{ url('/dashboard') }}">Dashboard</a></li>
+              <li><a class="text-white" href="{{ url('/dashboard') }}">Dashboard</a></li>
 
-            @elseif(Auth::check() && Auth::user()->isUser())
+              @elseif(Auth::check() && Auth::user()->isUser())
 
-            @endif
-            @else
-            <li><a class="text-white" href="#panel1">Home</a></li>
-            <li><a class="text-white" href="#panel2">Harga</a></li>
-            <li><a class="text-white" href="{{ route('login') }}">Masuk</a></li>
+              @endif
+              @else
+              <li><a class="text-white" href="#panel1">Home</a></li>
+              <li><a class="text-white" href="#panel2">Harga</a></li>
+              <li><a class="text-white" href="{{ route('login') }}">Masuk</a></li>
 
-            @if (Route::has('register'))
-            <li><a class="text-white" href="{{ route('register') }}">Daftar</a></li>
-            @endif
-            @endauth
-            <!-- </div> -->
-            @endif
-
-          @endif
-          @if (Route::currentRouteName() == 'sonya')
-            @if (Route::has('login'))
-            <!-- <div class="top-right links"> -->
-            @auth
-            <li><a class="text-white" href="{{ route('index')}}">Home</a></li>
-            <li><a class="text-white" href="{{ route('home') }}">Profile</a></li>
-            @if (Auth::check() && Auth::user()->isAdmin())
-
-            <li><a class="text-white" href="{{ route('dashboard') }}">Dashboard</a></li>
-
-            @elseif(Auth::check() && Auth::user()->isUser())
+              @if (Route::has('register'))
+              <li><a class="text-white" href="{{ route('register') }}">Daftar</a></li>
+              @endif
+              @endauth
+              <!-- </div> -->
+              @endif
 
             @endif
-            @else
-            <li><a class="text-white" href="{{ route('index') }}">Home</a></li>
-            <li><a class="text-white" href="{{ route('login') }}">Masuk</a></li>
+            @if (Route::currentRouteName() == 'sonya')
+              @if (Route::has('login'))
+              <!-- <div class="top-right links"> -->
+              @auth
+              <li><a class="text-white" href="{{ route('index')}}">Home</a></li>
+              <li><a class="text-white" href="{{ route('home') }}">Profile</a></li>
+              @if (Auth::check() && Auth::user()->isAdmin())
 
-            @if (Route::has('register'))
-            <li><a class="text-white" href="{{ route('register') }}">Daftar</a></li>
+              <li><a class="text-white" href="{{ route('dashboard') }}">Dashboard</a></li>
+
+              @elseif(Auth::check() && Auth::user()->isUser())
+
+              @endif
+              @else
+              <li><a class="text-white" href="{{ route('index') }}">Home</a></li>
+              <li><a class="text-white" href="{{ route('login') }}">Masuk</a></li>
+
+              @if (Route::has('register'))
+              <li><a class="text-white" href="{{ route('register') }}">Daftar</a></li>
+              @endif
+              @endauth
+              <!-- </div> -->
+              @endif
             @endif
-            @endauth
-            <!-- </div> -->
-            @endif
-          @endif
-        </ul>
+          </ul>
+        </div>
 
       </div>
     </div>
     <div class="col-sm-4 pt-5 pb-5">
       <div class="container">
-        <p class="font-weight-bold">Alamat </p>
-        <p><i class="fas fa-map-marker-alt"></i> Perumahan Semeru Permai 3 <br>Blok.H No.6<br>Sumbersari, Jember<br></p>
-        <p class="font-weight-bold pt-1">Kontak</p>
-        <div class="d-flex flex-row">
-          <a class="btn btn-outline-success mr-3" href="https://wa.me/62895385250387?text=Saya%20tertarik%20untuk%20menyewa%20HT%20di%205758Media" role="button"><i class="fab fa-whatsapp"></i> Ilham</a>
-          <a class="btn btn-outline-success" href="https://wa.me/6289516156911?text=Saya%20tertarik%20untuk%20menyewa%20HT%20di%205758Media" role="button"><i class="fab fa-whatsapp"></i> Daffa</a>
+        <div class="border-bottom">
+          <p class="font-weight-bold">Alamat </p>
         </div>
+        <div class="pt-2">
+          <p><i class="fas fa-map-marker-alt"></i> Perumahan Semeru Permai 3 <br>Blok.H No.6<br>Sumbersari, Jember<br></p>
+          <p class="font-weight-bold pt-1">Kontak</p>
+          <div class="d-flex flex-row">
+            <a class="btn btn-outline-success mr-3" href="https://wa.me/62895385250387?text=Saya%20tertarik%20untuk%20menyewa%20HT%20di%205758Media" role="button"><i class="fab fa-whatsapp"></i> Ilham</a>
+            <a class="btn btn-outline-success" href="https://wa.me/6289516156911?text=Saya%20tertarik%20untuk%20menyewa%20HT%20di%205758Media" role="button"><i class="fab fa-whatsapp"></i> Daffa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-hubungi" tabindex="-1" role="dialog" aria-labelledby="hubungi" aria-hidden="true" style="z-index: 1201;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="card">
+        <div class="card-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="container">
+            <h1 class="text-center pb-2">Hubungi kami</h1>
+            <div class="d-flex flex-row d-flex justify-content-around">
+              <a class="btn btn-outline-success" href="https://wa.me/62895385250387?text=Saya%20tertarik%20untuk%20berlangganan%20HT%20di%205758Media" role="button"><i class="fab fa-whatsapp"></i> Ilham</a>
+              <a class="btn btn-outline-success" href="https://wa.me/6289516156911?text=Saya%20tertarik%20untuk%20berlangganan%20HT%20di%205758Media" role="button"><i class="fab fa-whatsapp"></i> Daffa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade pesan-normal" tabindex="-1" role="dialog" aria-labelledby="hubungi" aria-hidden="true" style="z-index: 1201;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New order: Normal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form method="POST" action="/home/new_order">
+                  {{ csrf_field() }}
+          <div class="form-row">
+            <div class="form-group col-sm-md-6">
+              <label >Nama penyewa</label>
+              <input type="text" name="nama" class="form-control" placeholder="{{ Auth::user()->name }}">
+              <small class="form-text text-muted">Nama penyewa haru sama dengan Jaminan.</small>
+            </div>
+            <div class="form-group col-sm-md-6">
+              <label for="no_hp">Nomor telfon</label>
+              <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="{{ Auth::user()->phone }}">
+              <small class="form-text text-muted">Masukkan nomor yang dapat dihubungi.</small>
+            </div>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-sm-md-6">
+            <label for="acara">Acara</label>
+            <input type="text" name="acara" class="form-control" id="acara" placeholder="Nama acara / kegiatan">
+            <small class="form-text text-muted">Nama acara.</small>
+          </div>
+          <div class="form-group col-sm-md-6">
+            <label for="paket">Paket</label>
+            <select id="paket" name="paket" class="form-control" readonly>
+              <option value="1"selected>Normal</option>
+            </select>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat / Fakultas dan jurusan </label>
+            <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Alamat / Fakultas dan jurusan">
+            <small class="form-text text-muted">Lokasi / alamat acara.</small>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-md-6">
+              <label for="tanggal_sewa">Tanggal sewa</label>
+              <input type="date" name="tanggal_sewa" class="form-control" id="tanggal_sewa">
+            </div>
+            <div class="form-group col-sm-md-4">
+              <label for="jumlah_hari">Jumlah hari</label>
+              <select onchange="getNormal()" id="jumlah_hari" name="jumlah_hari" class="form-control">
+                <option selected>Pilih..</option>
+                    @for ($i = 1; $i < 11; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+              </select>
+            </div>
+            <div class="form-group col-sm-md-2">
+              <label for="jumlah_unit">Unit</label>
+              <select onchange="getNormal()" id="jumlah_unit" name="jumlah_unit" class="form-control">
+                <option selected>Pilih..</option>
+                    @for ($i = 1; $i < 31; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+              </select>
+            </div>
+          </div>
+          <p id="totaln"></p>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Bersedia & Setuju dengan ketentuan dan persyaratan yang berlaku.
+              </label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="reset" class="btn btn-danger pull-right">Reset</button>
+            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade pesan-mediapartner" tabindex="-1" role="dialog" aria-labelledby="hubungi" aria-hidden="true" style="z-index: 1201;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New order: Media Partner</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form method="POST" action="/home/new_order">
+                  {{ csrf_field() }}
+          <div class="form-row">
+            <div class="form-group col-sm-md-6">
+              <label >Nama penyewa</label>
+              <input type="text" name="nama" class="form-control" placeholder="{{ Auth::user()->name }}">
+              <small class="form-text text-muted">Nama penyewa haru sama dengan Jaminan.</small>
+            </div>
+            <div class="form-group col-sm-md-6">
+              <label for="no_hp">Nomor telfon</label>
+              <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="{{ Auth::user()->phone }}">
+              <small class="form-text text-muted">Masukkan nomor yang dapat dihubungi.</small>
+            </div>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-sm-md-6">
+            <label for="acara">Acara</label>
+            <input type="text" name="acara" class="form-control" id="acara" placeholder="Nama acara / kegiatan">
+            <small class="form-text text-muted">Nama acara.</small>
+          </div>
+          <div class="form-group col-sm-md-6">
+            <label for="paket">Paket</label>
+            <select id="paket" name="paket" class="form-control" readonly>
+              <option value="2"selected>Media Partner</option>
+            </select>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat / Fakultas dan jurusan </label>
+            <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Alamat / Fakultas dan jurusan">
+            <small class="form-text text-muted">Lokasi / alamat acara.</small>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-md-6">
+              <label for="tanggal_sewa">Tanggal sewa</label>
+              <input type="date" name="tanggal_sewa" class="form-control" id="tanggal_sewa">
+            </div>
+            <div class="form-group col-sm-md-4">
+              <label for="jumlah_hari">Jumlah hari</label>
+              <select onchange="getMediapartner()" id="jumlah_hari_m" name="jumlah_hari" class="form-control">
+                <option selected>Pilih..</option>
+                    @for ($i = 1; $i < 11; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+              </select>
+            </div>
+            <div class="form-group col-sm-md-2">
+              <label for="jumlah_unit">Unit</label>
+              <select onchange="getMediapartner()" id="jumlah_unit_m" name="jumlah_unit" class="form-control">
+                <option selected>Pilih..</option>
+                    @for ($i = 1; $i < 31; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+              </select>
+            </div>
+          </div>
+          <p id="totalm"></p>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Bersedia & Setuju dengan ketentuan dan persyaratan yang berlaku.
+              </label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="reset" class="btn btn-danger pull-right">Reset</button>
+            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+          </div>
+
+        </form>
       </div>
     </div>
   </div>
@@ -337,7 +554,8 @@
 <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Moment -->
 <script type="text/javascript" src="{{ asset('js/moment.min.js')}}"></script>
-
+<!-- Instafeed -->
+<script type="text/javascript" src="{{ asset('js/instafeed.min.js')}}"></script>
 
 <script>
 function getInputNota(){
@@ -385,6 +603,28 @@ $('#return-to-top').click(function() {      // When arrow is clicked
         scrollTop : 0                       // Scroll to top of body
     }, 500);
 });
+
+</script>
+
+<script>
+function getNormal() {
+  var obja = document.getElementById("jumlah_unit");
+  var objb = document.getElementById("jumlah_hari");
+  var hari = obja.options[obja.selectedIndex].text;
+  var unit = objb.options[objb.selectedIndex].text;
+  var total = (unit * 9000) * hari;
+  document.getElementById("totaln").innerHTML = "Total harga: Rp. " + total;
+}
+
+function getMediapartner() {
+  var obja = document.getElementById("jumlah_unit_m");
+  var objb = document.getElementById("jumlah_hari_m");
+  var hari = obja.options[obja.selectedIndex].text;
+  var unit = objb.options[objb.selectedIndex].text;
+  var total = (unit * 5000) * hari;
+  document.getElementById("totalm").innerHTML = "Total harga: Rp. " + total;
+}
+
 
 </script>
 

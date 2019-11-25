@@ -130,9 +130,11 @@
                                           <button class="dropdown-item" type="button" data-toggle="modal" data-target="#batal{{$o->id}}">Batalkan</button>
                                   @elseif( $o -> status =='2')
                                               <button class="dropdown-item" type="button" data-toggle="modal" data-target="#konfirmasidp{{$o->id}}">Konfirmasi DP</button>
+                                              <a class="btn btn-lg btn-block btn-outline-danger" href="/dashboard/order/rollback/dp/{{$o->id}}" role="button">Rollback</a>
                                               <button class="dropdown-item" type="button" data-toggle="modal" data-target="#batal{{$o->id}}">Batalkan</button>
                                   @elseif( $o -> status =='4')
                                                     <button class="dropdown-item" type="button" data-toggle="modal" data-target="#konfirmasijaminan{{$o->id}}">Konfirmasi jaminan</button>
+                                                    <a class="btn btn-lg btn-block btn-outline-danger" href="/dashboard/order/rollback/pelunasan/{{$o->id}}" role="button">Rollback</a>
                                                     <button class="dropdown-item" type="button" data-toggle="modal" data-target="#cekdp{{$o->id}}">Lihat DP</button>
                                                     <button class="dropdown-item" type="button" data-toggle="modal" data-target="#batal{{$o->id}}">Batalkan</button>
                                   @elseif( $o -> status =='5')
@@ -644,6 +646,7 @@
 
                                                 <button class="dropdown-item" type="button" data-toggle="modal" data-target="#konfirmasidp2{{$o->id}}">Konfirmasi DP</button>
                                                 <button class="dropdown-item" type="button" data-toggle="modal" data-target="#batal2{{$o->id}}">Batalkan</button>
+                                                <a class="dropdown-item btn btn-lg btn-block btn-outline-danger" href="/dashboard/order/rollback/dp/{{$o->id}}" role="button">Rollback</a>
 
                                   </div>
                                 </div>

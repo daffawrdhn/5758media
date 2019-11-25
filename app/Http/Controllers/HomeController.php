@@ -88,6 +88,7 @@ class HomeController extends Controller
           'alamat' => 'required',
           'acara' => 'required',
           'paket' => 'required',
+          'no_hp' => 'required',
           'tanggal_sewa' => 'required',
           'jumlah_hari' => 'required',
           'jumlah_unit' => 'required',

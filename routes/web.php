@@ -104,5 +104,8 @@ Route::group(['middleware' => ['auth','admin']], function() {
     Route::put('/dashboard/order/proses/delete/{id}', 'Admin\DashboardController@hapusorder');
     Route::put('/dashboard/order/proses/selesai/{id}', 'Admin\DashboardController@orderselesai');
     Route::get('/dashboard/order/nota/{id}', 'Admin\DashboardController@nota');
+
+    Route::get('/dashboard/order/rollback/dp/{id}', 'Admin\DashboardController@rollbackdp');
+    Route::get('/dashboard/order/rollback/pelunasan/{id}', 'Admin\DashboardController@rollbackpelunasan');
     //ajax
 });

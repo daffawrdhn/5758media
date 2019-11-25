@@ -20,14 +20,14 @@ class DashboardController extends Controller
     public function index_baru()
     {
         //where order
-        $semuaorder_data = Order::paginate(10);
-        $konfirmasiorder_data = Order::where('status','=','0')->get();
-        $konfirmasidp_data = Order::where('status','=','2')->get();
-        $konfirmasijaminan_data = Order::where('status','=','4')->get();
-        $konfirmasipembatalan_data = Order::where('status','=','98')->get();
-        $sedangberjalan_data = Order::where('status','=','5')->get();
-        $pesanandibatalkan_data = Order::where('status','=','99')->get();
-        $selesai_data = Order::where('status', '=', '6')->get();
+        $semuaorder_data = Order::orderBy('tanggal_sewa', 'ASC')->paginate(10);
+        $konfirmasiorder_data = Order::where('status','=','0')->orderBy('tanggal_sewa', 'ASC')->get();
+        $konfirmasidp_data = Order::where('status','=','2')->orderBy('tanggal_sewa', 'ASC')->get();
+        $konfirmasijaminan_data = Order::where('status','=','4')->orderBy('tanggal_sewa', 'ASC')->get();
+        $konfirmasipembatalan_data = Order::where('status','=','98')->orderBy('tanggal_sewa', 'ASC')->get();
+        $sedangberjalan_data = Order::where('status','=','5')->orderBy('tanggal_sewa', 'ASC')->get();
+        $pesanandibatalkan_data = Order::where('status','=','99')->orderBy('tanggal_sewa', 'ASC')->get();
+        $selesai_data = Order::where('status', '=', '6')->orderBy('tanggal_sewa', 'ASC')->get();
         //where user
         $user_data = User::all();
         $admin_data = User::where('usertype','=','admin')->get();
@@ -107,6 +107,27 @@ class DashboardController extends Controller
         $orders -> delete();
         return redirect()->back()->with('status', 'Order Deleted.');
     }
+
+    public function rollbackdp($id)
+    {
+        $orders = Order::findOrFail($id);
+                // hapus file
+        File::delete('dp_upload/'.$orders->dp_upload);
+        $orders -> status = '1';
+        $orders -> update();
+        return redirect()->back()->with('status', 'DP rollback.');
+    }
+
+    public function rollbackpelunasan($id)
+    {
+        $orders = Order::findOrFail($id);
+                // hapus file
+        File::delete('upload_jaminan/'.$orders->upload_jaminan);
+        $orders -> status = '3';
+        $orders -> update();
+        return redirect()->back()->with('status', 'Pelunasan Rollback.');
+    }
+
     public function proses(Request $request, $id)
     {
         $orders = Order::find($id);
